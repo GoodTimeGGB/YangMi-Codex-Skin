@@ -10,3 +10,12 @@ header{background:rgba(255,247,249,.94)}
 .cover-page{background:#fff1f5}
 .cover{background:#fff9fb;border-color:#684b60}
 .cover-window{background:#eedce5;border-color:#ba7690}
+.community{display:grid;grid-template-columns:.8fr 1.2fr;gap:54px;align-items:center;background:#fff1f5;border-top-color:#ead2dd!important}
+.community-intro p:not(.eyebrow){max-width:410px;font-size:16px}
+.community-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.community-links article,.community-links a{min-height:108px;display:flex;align-items:center;gap:13px;padding:18px;border:1px solid #e9cfda;background:#fffafb}
+.community-links strong,.community-links small{display:block}.community-links small{margin-top:4px;font-size:12px;line-height:1.45}
+.social-mark{width:38px;height:38px;display:grid;place-items:center;flex:0 0 auto;border-radius:50%;background:#8d4765;color:#fff;font-size:12px;font-weight:700}
+footer{max-width:none!important;display:flex!important;justify-content:space-between;align-items:center;padding-left:max(5vw,calc((100vw - 1180px)/2 + 5vw))!important;padding-right:max(5vw,calc((100vw - 1180px)/2 + 5vw))!important;background:#3b2935;color:#fff;border-top:0!important}
+footer span{display:block;margin-top:3px;color:#eedce5;font-size:12px}footer div:last-child{display:flex;gap:18px;font-size:13px;color:#fff0f5}
+@media(max-width:760px){.community{grid-template-columns:1fr;gap:30px}.community-links{grid-template-columns:1fr}footer{align-items:flex-start;flex-direction:column;gap:16px;padding-left:24px!important;padding-right:24px!important}footer div:last-child{flex-wrap:wrap}}

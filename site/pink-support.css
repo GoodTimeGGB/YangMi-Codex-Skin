@@ -17,8 +17,8 @@ header{background:rgba(255,247,249,.94)}
 .social-card{position:relative;min-height:108px;display:flex;align-items:center;gap:13px;padding:18px;border:1px solid #e9cfda;background:#fffafb;color:inherit}
 .social-card>img,.social-card summary>img{width:38px;height:38px;flex:0 0 auto;object-fit:contain}.social-card .fan-logo{border-radius:50%;background:#f0e0e8;object-fit:cover}
 .community-links strong,.community-links small{display:block}.community-links small{margin-top:4px;font-size:12px;line-height:1.45}
-.community-links .social-card{min-height:116px;padding:17px}
-.link-arrow{margin-left:auto;color:#8d4765;font-size:20px;font-weight:700}
+.community-links .social-card{display:grid;grid-template-columns:40px minmax(0,1fr) 18px;min-height:116px;align-items:center;gap:10px;padding:16px}.community-links .social-card>img{width:40px;height:40px}.community-links .social-card>div{min-width:0}.community-links strong{font-size:16px;line-height:1.25;white-space:nowrap}.community-links small{line-height:1.55;white-space:nowrap}
+.link-arrow{justify-self:end;margin-left:0;color:#8d4765;font-size:20px;font-weight:700}
 .wechat-card{display:block;min-height:auto;padding:0!important;overflow:hidden;background:#fff!important}
 .wechat-copy{display:flex;min-width:0;align-items:center;gap:13px}.wechat-copy>img{width:38px;height:38px;flex:0 0 auto;object-fit:contain}.wechat-copy>div{min-width:0}
 .social-kicker{margin:0 0 7px;color:#a55170;font-size:11px;font-weight:700;letter-spacing:.08em}

@@ -18,7 +18,7 @@ header{background:rgba(255,247,249,.94)}
 .community-links strong,.community-links small{display:block}.community-links small{margin-top:4px;font-size:12px;line-height:1.45}
 .link-arrow{margin-left:auto;color:#8d4765;font-size:20px;font-weight:700}
 .wechat-card{grid-column:span 2;display:grid;grid-template-columns:1fr 132px!important;align-items:center!important;gap:16px!important}
-.wechat-copy{display:flex;align-items:center;gap:13px}.qr-inline{width:118px!important;height:118px!important;justify-self:end;padding:5px;border:1px solid #e4c7d3;background:#fff;image-rendering:pixelated}
+.wechat-copy{display:flex;min-width:0;align-items:center;gap:13px}.wechat-copy>img{width:38px;height:38px;flex:0 0 auto;object-fit:contain}.wechat-copy>div{min-width:0}.qr-inline{width:118px!important;height:118px!important;justify-self:end;padding:5px;border:1px solid #e4c7d3;background:#fff;image-rendering:pixelated}
 footer{max-width:none!important;display:flex!important;justify-content:space-between;align-items:center;padding-left:max(5vw,calc((100vw - 1180px)/2 + 5vw))!important;padding-right:max(5vw,calc((100vw - 1180px)/2 + 5vw))!important;background:#3b2935;color:#fff;border-top:0!important}
 footer span{display:block;margin-top:3px;color:#eedce5;font-size:12px}footer div:last-child{display:flex;gap:18px;font-size:13px;color:#fff0f5}
 @media(max-width:760px){.community{grid-template-columns:1fr;gap:30px}.community-links{grid-template-columns:1fr}.wechat-card{grid-column:span 1;grid-template-columns:1fr 118px!important}footer{align-items:flex-start;flex-direction:column;gap:16px;padding-left:24px!important;padding-right:24px!important}footer div:last-child{flex-wrap:wrap}}

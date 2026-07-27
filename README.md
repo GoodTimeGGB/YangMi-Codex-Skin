@@ -74,6 +74,11 @@ skin-package/   可应用的皮肤包、主题素材与测试
 - [项目复盘与使用指南](docs/YangMi-Codex-Skin-项目复盘与使用指南.md)
 - [在线介绍页](https://goodtimeggb.github.io/YangMi-Codex-Skin/)（GitHub Pages 部署完成后生效）
 
+## 制作中
+
+- WorkBuddy 杨幂皮肤
+- TraeWork 杨幂皮肤
+
 ## 资源说明
 
 仓库包含用于主题与宠物制作的图片参考。发布、转载或二次分发前，请自行确认人物肖像、图片素材和平台规则的授权范围。

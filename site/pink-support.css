@@ -1,0 +1,12 @@
+:root{--ink:#302733;--paper:#fff7f9;--leaf:#684b60;--rose:#c65b7c;--line:#edd7e0}
+body{background:var(--paper)}
+header{background:rgba(255,247,249,.94)}
+.button{background:#8d4765}
+.install{background:#f9e8ee}
+.tint{background:#f1e9f2}
+.difference{background:#faf0f4}
+.highlight-grid article,.difference-grid article,.install-grid article,.building,.contribute{background:#fffafb}
+.pet-guide img{box-shadow:8px 8px 0 #eadde9}
+.cover-page{background:#fff1f5}
+.cover{background:#fff9fb;border-color:#684b60}
+.cover-window{background:#eedce5;border-color:#ba7690}

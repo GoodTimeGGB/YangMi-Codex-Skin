@@ -217,7 +217,7 @@ skin-package/windows/Restore-默认外观.cmd
 
 项目地址将在发布后补充：
 
-- GitHub: [待补充](https://github.com/<your-account>/YangMi-Codex-Skin)
+- GitHub: [GoodTimeGGB/YangMi-Codex-Skin](https://github.com/GoodTimeGGB/YangMi-Codex-Skin)
 - Gitee: [待补充](https://gitee.com/<your-account>/YangMi-Codex-Skin)
 - GitCode: [待补充](https://gitcode.com/<your-account>/YangMi-Codex-Skin)
 

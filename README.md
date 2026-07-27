@@ -33,7 +33,7 @@
 
 ### Windows
 
-双击 `pet-package/windows/Install-杨幂绿蜂宠物.cmd`，重启 Codex 后在设置中选择杨幂绿蜂宠物。
+双击 `pet-package/windows/Install-杨幂绿蜂宠物.cmd`，重启 Codex 后打开 `编辑 → Settings… → 宠物（Pets）`，选择 `Yang Mi Green Bee`。
 
 ### macOS
 
@@ -43,7 +43,7 @@
 zsh pet-package/macos/install-yangmi-green-bee-pet.zsh
 ```
 
-重启 Codex 后在设置中选择杨幂绿蜂宠物。
+重启 Codex 后打开 `编辑 → Settings… → 宠物（Pets）`，选择 `Yang Mi Green Bee`。
 
 ## 宠物制作资源
 

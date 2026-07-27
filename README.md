@@ -29,7 +29,23 @@
 
 不要只把 WebP 或 PNG 改名为 `.jpg`，图片实际格式必须是 JPEG。
 
-## 宠物资源
+## 安装宠物
+
+### Windows
+
+双击 `pet-package/windows/Install-杨幂绿蜂宠物.cmd`，重启 Codex 后在设置中选择杨幂绿蜂宠物。
+
+### macOS
+
+在项目根目录执行：
+
+```zsh
+zsh pet-package/macos/install-yangmi-green-bee-pet.zsh
+```
+
+重启 Codex 后在设置中选择杨幂绿蜂宠物。
+
+## 宠物制作资源
 
 `pet-runs/yangmi-green-bee/` 中保留了完整制作过程：
 
@@ -47,6 +63,7 @@
 ```text
 assets/         有语义命名的原始参考图
 docs/           项目复盘文章、设计与效果图
+pet-package/    可安装的杨幂绿蜂宠物包与 Windows/macOS 安装脚本
 pet-runs/       宠物精灵图、动画帧、预览与制作参数
 site/           可部署到 Cloudflare Pages 的静态介绍页
 skin-package/   可应用的皮肤包、主题素材与测试

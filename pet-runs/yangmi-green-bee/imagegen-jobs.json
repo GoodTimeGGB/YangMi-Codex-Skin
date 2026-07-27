@@ -1,0 +1,442 @@
+{
+    "schema_version":  1,
+    "created_at":  "2026-07-17T12:52:22.919439+00:00",
+    "run_dir":  "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee",
+    "primary_generation_skill":  "$imagegen",
+    "jobs":  [
+                 {
+                     "id":  "base",
+                     "kind":  "base-pet",
+                     "status":  "complete",
+                     "prompt_file":  "prompts/base-pet.md",
+                     "input_images":  [
+                                          {
+                                              "path":  "references\\reference-01.webp",
+                                              "role":  "pet reference"
+                                          }
+                                      ],
+                     "output_path":  "decoded/base.png",
+                     "depends_on":  [
+
+                                    ],
+                     "generation_skill":  "$imagegen",
+                     "requires_grounded_generation":  true,
+                     "allow_prompt_only_generation":  false,
+                     "source_path":  "C:\\Users\\Administrator\\.codex\\attachments\\34b02383-77e7-409b-9ef8-c79bad3fa3f5\\pasted-text.txt",
+                     "completed_at":  "2026-07-17T13:59:22.2289058Z"
+                 },
+                 {
+                     "id":  "idle",
+                     "kind":  "row-strip",
+                     "status":  "complete",
+                     "prompt_file":  "prompts/rows/idle.md",
+                     "retry_prompt_file":  "prompts/row-retries/idle.md",
+                     "input_images":  [
+                                          {
+                                              "path":  "references\\reference-01.webp",
+                                              "role":  "pet reference"
+                                          },
+                                          {
+                                              "path":  "references/layout-guides/idle.png",
+                                              "role":  "layout guide for 6 frame slots; use for spacing only, do not copy guide lines"
+                                          },
+                                          {
+                                              "path":  "references/canonical-base.png",
+                                              "role":  "canonical identity reference"
+                                          }
+                                      ],
+                     "output_path":  "decoded/idle.png",
+                     "depends_on":  [
+                                        "base"
+                                    ],
+                     "generation_skill":  "$imagegen",
+                     "requires_grounded_generation":  true,
+                     "allow_prompt_only_generation":  false,
+                     "identity_reference_paths":  [
+                                                      "references/canonical-base.png"
+                                                  ],
+                     "parallelizable_after":  [
+                                                  "base"
+                                              ],
+                     "derivation_policy":  {
+                                               "may_derive":  false,
+                                               "reason":  "no deterministic derivation is configured for this state"
+                                           },
+                     "mirror_policy":  {
+
+                                       },
+                     "source_path":  "C:\\Users\\Administrator\\.codex\\attachments\\e3305856-f0a0-4f75-84e2-b79669f1d28f\\pasted-text.txt",
+                     "completed_at":  "2026-07-17T14:17:57.4926263Z"
+                 },
+                 {
+                     "id":  "running-right",
+                     "kind":  "row-strip",
+                     "status":  "complete",
+                     "prompt_file":  "prompts/rows/running-right.md",
+                     "retry_prompt_file":  "prompts/row-retries/running-right.md",
+                     "input_images":  [
+                                          {
+                                              "path":  "references\\reference-01.webp",
+                                              "role":  "pet reference"
+                                          },
+                                          {
+                                              "path":  "references/layout-guides/running-right.png",
+                                              "role":  "layout guide for 8 frame slots; use for spacing only, do not copy guide lines"
+                                          },
+                                          {
+                                              "path":  "references/canonical-base.png",
+                                              "role":  "canonical identity reference"
+                                          }
+                                      ],
+                     "output_path":  "decoded/running-right.png",
+                     "depends_on":  [
+                                        "base"
+                                    ],
+                     "generation_skill":  "$imagegen",
+                     "requires_grounded_generation":  true,
+                     "allow_prompt_only_generation":  false,
+                     "identity_reference_paths":  [
+                                                      "references/canonical-base.png"
+                                                  ],
+                     "parallelizable_after":  [
+                                                  "base"
+                                              ],
+                     "derivation_policy":  {
+                                               "may_derive":  false,
+                                               "reason":  "no deterministic derivation is configured for this state"
+                                           },
+                     "mirror_policy":  {
+
+                                       },
+                     "source_path":  "C:\\Users\\Administrator\\.codex\\attachments\\1a641592-1b16-4049-a4e2-faff0e5abcdb\\pasted-text.txt",
+                     "completed_at":  "2026-07-17T14:17:57.5303078Z"
+                 },
+                 {
+                     "id":  "running-left",
+                     "kind":  "row-strip",
+                     "status":  "complete",
+                     "prompt_file":  "prompts/rows/running-left.md",
+                     "retry_prompt_file":  "prompts/row-retries/running-left.md",
+                     "input_images":  [
+                                          {
+                                              "path":  "references\\reference-01.webp",
+                                              "role":  "pet reference"
+                                          },
+                                          {
+                                              "path":  "references/layout-guides/running-left.png",
+                                              "role":  "layout guide for 8 frame slots; use for spacing only, do not copy guide lines"
+                                          },
+                                          {
+                                              "path":  "references/canonical-base.png",
+                                              "role":  "canonical identity reference"
+                                          },
+                                          {
+                                              "path":  "decoded/running-right.png",
+                                              "role":  "rightward gait reference for leftward row decision"
+                                          }
+                                      ],
+                     "output_path":  "decoded/running-left.png",
+                     "depends_on":  [
+                                        "base",
+                                        "running-right"
+                                    ],
+                     "generation_skill":  "$imagegen",
+                     "requires_grounded_generation":  true,
+                     "allow_prompt_only_generation":  false,
+                     "identity_reference_paths":  [
+                                                      "references/canonical-base.png"
+                                                  ],
+                     "parallelizable_after":  [
+                                                  "base",
+                                                  "running-right"
+                                              ],
+                     "derivation_policy":  {
+                                               "may_derive":  true,
+                                               "may_derive_from":  "running-right",
+                                               "derivation":  "framewise-horizontal-mirror-preserving-order",
+                                               "requires_explicit_approval":  true,
+                                               "fallback_generation_skill":  "$imagegen"
+                                           },
+                     "mirror_policy":  {
+                                           "may_derive":  true,
+                                           "may_derive_from":  "running-right",
+                                           "derivation":  "framewise-horizontal-mirror-preserving-order",
+                                           "requires_explicit_approval":  true,
+                                           "fallback_generation_skill":  "$imagegen"
+                                       },
+                     "source_path":  "decoded\\running-right.png",
+                     "derived_from":  "running-right",
+                     "completed_at":  "2026-07-17T14:18:44.191698+00:00",
+                     "metadata":  {
+                                      "width":  2172,
+                                      "height":  724,
+                                      "mode":  "RGBA",
+                                      "format":  "PNG"
+                                  },
+                     "mirror_decision":  {
+                                             "approved":  true,
+                                             "approved_at":  "2026-07-17T14:18:44.191698+00:00",
+                                             "note":  "The chibi mascot has symmetric wings and costume details; a framewise mirror preserves its identity and produces a left-facing gait.",
+                                             "transform":  "framewise-horizontal-mirror-preserving-order"
+                                         }
+                 },
+                 {
+                     "id":  "waving",
+                     "kind":  "row-strip",
+                     "status":  "complete",
+                     "prompt_file":  "prompts/rows/waving.md",
+                     "retry_prompt_file":  "prompts/row-retries/waving.md",
+                     "input_images":  [
+                                          {
+                                              "path":  "references\\reference-01.webp",
+                                              "role":  "pet reference"
+                                          },
+                                          {
+                                              "path":  "references/layout-guides/waving.png",
+                                              "role":  "layout guide for 4 frame slots; use for spacing only, do not copy guide lines"
+                                          },
+                                          {
+                                              "path":  "references/canonical-base.png",
+                                              "role":  "canonical identity reference"
+                                          }
+                                      ],
+                     "output_path":  "decoded/waving.png",
+                     "depends_on":  [
+                                        "base"
+                                    ],
+                     "generation_skill":  "$imagegen",
+                     "requires_grounded_generation":  true,
+                     "allow_prompt_only_generation":  false,
+                     "identity_reference_paths":  [
+                                                      "references/canonical-base.png"
+                                                  ],
+                     "parallelizable_after":  [
+                                                  "base"
+                                              ],
+                     "derivation_policy":  {
+                                               "may_derive":  false,
+                                               "reason":  "state requires its own generated animation semantics"
+                                           },
+                     "mirror_policy":  {
+
+                                       },
+                     "source_path":  "C:\\Users\\Administrator\\.codex\\attachments\\0ef740d2-8e45-4820-af23-4978503967d2\\pasted-text.txt",
+                     "completed_at":  "2026-07-18T06:06:27.2354850Z"
+                 },
+                 {
+                     "id":  "jumping",
+                     "kind":  "row-strip",
+                     "status":  "complete",
+                     "prompt_file":  "prompts/rows/jumping.md",
+                     "retry_prompt_file":  "prompts/row-retries/jumping.md",
+                     "input_images":  [
+                                          {
+                                              "path":  "references\\reference-01.webp",
+                                              "role":  "pet reference"
+                                          },
+                                          {
+                                              "path":  "references/layout-guides/jumping.png",
+                                              "role":  "layout guide for 5 frame slots; use for spacing only, do not copy guide lines"
+                                          },
+                                          {
+                                              "path":  "references/canonical-base.png",
+                                              "role":  "canonical identity reference"
+                                          }
+                                      ],
+                     "output_path":  "decoded/jumping.png",
+                     "depends_on":  [
+                                        "base"
+                                    ],
+                     "generation_skill":  "$imagegen",
+                     "requires_grounded_generation":  true,
+                     "allow_prompt_only_generation":  false,
+                     "identity_reference_paths":  [
+                                                      "references/canonical-base.png"
+                                                  ],
+                     "parallelizable_after":  [
+                                                  "base"
+                                              ],
+                     "derivation_policy":  {
+                                               "may_derive":  false,
+                                               "reason":  "state requires its own generated animation semantics"
+                                           },
+                     "mirror_policy":  {
+
+                                       },
+                     "source_path":  "C:\\Users\\Administrator\\.codex\\attachments\\4fd3cdc2-0363-462a-b00b-c907a2f60491\\pasted-text.txt",
+                     "completed_at":  "2026-07-18T06:06:27.2364816Z"
+                 },
+                 {
+                     "id":  "failed",
+                     "kind":  "row-strip",
+                     "status":  "complete",
+                     "prompt_file":  "prompts/rows/failed.md",
+                     "retry_prompt_file":  "prompts/row-retries/failed.md",
+                     "input_images":  [
+                                          {
+                                              "path":  "references\\reference-01.webp",
+                                              "role":  "pet reference"
+                                          },
+                                          {
+                                              "path":  "references/layout-guides/failed.png",
+                                              "role":  "layout guide for 8 frame slots; use for spacing only, do not copy guide lines"
+                                          },
+                                          {
+                                              "path":  "references/canonical-base.png",
+                                              "role":  "canonical identity reference"
+                                          }
+                                      ],
+                     "output_path":  "decoded/failed.png",
+                     "depends_on":  [
+                                        "base"
+                                    ],
+                     "generation_skill":  "$imagegen",
+                     "requires_grounded_generation":  true,
+                     "allow_prompt_only_generation":  false,
+                     "identity_reference_paths":  [
+                                                      "references/canonical-base.png"
+                                                  ],
+                     "parallelizable_after":  [
+                                                  "base"
+                                              ],
+                     "derivation_policy":  {
+                                               "may_derive":  false,
+                                               "reason":  "state requires its own generated animation semantics"
+                                           },
+                     "mirror_policy":  {
+
+                                       },
+                     "source_path":  "C:\\Users\\Administrator\\.codex\\attachments\\06513614-a619-477d-b6e6-ef799afa970e\\pasted-text.txt",
+                     "completed_at":  "2026-07-18T06:06:27.1887336Z"
+                 },
+                 {
+                     "id":  "waiting",
+                     "kind":  "row-strip",
+                     "status":  "complete",
+                     "prompt_file":  "prompts/rows/waiting.md",
+                     "retry_prompt_file":  "prompts/row-retries/waiting.md",
+                     "input_images":  [
+                                          {
+                                              "path":  "references\\reference-01.webp",
+                                              "role":  "pet reference"
+                                          },
+                                          {
+                                              "path":  "references/layout-guides/waiting.png",
+                                              "role":  "layout guide for 6 frame slots; use for spacing only, do not copy guide lines"
+                                          },
+                                          {
+                                              "path":  "references/canonical-base.png",
+                                              "role":  "canonical identity reference"
+                                          }
+                                      ],
+                     "output_path":  "decoded/waiting.png",
+                     "depends_on":  [
+                                        "base"
+                                    ],
+                     "generation_skill":  "$imagegen",
+                     "requires_grounded_generation":  true,
+                     "allow_prompt_only_generation":  false,
+                     "identity_reference_paths":  [
+                                                      "references/canonical-base.png"
+                                                  ],
+                     "parallelizable_after":  [
+                                                  "base"
+                                              ],
+                     "derivation_policy":  {
+                                               "may_derive":  false,
+                                               "reason":  "state requires its own generated animation semantics"
+                                           },
+                     "mirror_policy":  {
+
+                                       },
+                     "source_path":  "C:\\Users\\Administrator\\.codex\\attachments\\c76af296-2a79-43ae-b713-a49a618a36bc\\pasted-text.txt",
+                     "completed_at":  "2026-07-18T06:06:27.2344788Z"
+                 },
+                 {
+                     "id":  "running",
+                     "kind":  "row-strip",
+                     "status":  "complete",
+                     "prompt_file":  "prompts/rows/running.md",
+                     "retry_prompt_file":  "prompts/row-retries/running.md",
+                     "input_images":  [
+                                          {
+                                              "path":  "references\\reference-01.webp",
+                                              "role":  "pet reference"
+                                          },
+                                          {
+                                              "path":  "references/layout-guides/running.png",
+                                              "role":  "layout guide for 6 frame slots; use for spacing only, do not copy guide lines"
+                                          },
+                                          {
+                                              "path":  "references/canonical-base.png",
+                                              "role":  "canonical identity reference"
+                                          }
+                                      ],
+                     "output_path":  "decoded/running.png",
+                     "depends_on":  [
+                                        "base"
+                                    ],
+                     "generation_skill":  "$imagegen",
+                     "requires_grounded_generation":  true,
+                     "allow_prompt_only_generation":  false,
+                     "identity_reference_paths":  [
+                                                      "references/canonical-base.png"
+                                                  ],
+                     "parallelizable_after":  [
+                                                  "base"
+                                              ],
+                     "derivation_policy":  {
+                                               "may_derive":  false,
+                                               "reason":  "state requires its own generated animation semantics"
+                                           },
+                     "mirror_policy":  {
+
+                                       },
+                     "source_path":  "C:\\Users\\Administrator\\.codex\\attachments\\3acf8202-908a-40ff-b876-574fc59f925a\\pasted-text.txt",
+                     "completed_at":  "2026-07-18T06:06:27.2354850Z"
+                 },
+                 {
+                     "id":  "review",
+                     "kind":  "row-strip",
+                     "status":  "complete",
+                     "prompt_file":  "prompts/rows/review.md",
+                     "retry_prompt_file":  "prompts/row-retries/review.md",
+                     "input_images":  [
+                                          {
+                                              "path":  "references\\reference-01.webp",
+                                              "role":  "pet reference"
+                                          },
+                                          {
+                                              "path":  "references/layout-guides/review.png",
+                                              "role":  "layout guide for 6 frame slots; use for spacing only, do not copy guide lines"
+                                          },
+                                          {
+                                              "path":  "references/canonical-base.png",
+                                              "role":  "canonical identity reference"
+                                          }
+                                      ],
+                     "output_path":  "decoded/review.png",
+                     "depends_on":  [
+                                        "base"
+                                    ],
+                     "generation_skill":  "$imagegen",
+                     "requires_grounded_generation":  true,
+                     "allow_prompt_only_generation":  false,
+                     "identity_reference_paths":  [
+                                                      "references/canonical-base.png"
+                                                  ],
+                     "parallelizable_after":  [
+                                                  "base"
+                                              ],
+                     "derivation_policy":  {
+                                               "may_derive":  false,
+                                               "reason":  "state requires its own generated animation semantics"
+                                           },
+                     "mirror_policy":  {
+
+                                       },
+                     "source_path":  "C:\\Users\\Administrator\\.codex\\attachments\\b535380f-e40d-4a7e-859a-3f8a8ee8582f\\pasted-text.txt",
+                     "completed_at":  "2026-07-18T06:06:27.2364816Z"
+                 }
+             ]
+}

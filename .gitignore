@@ -1,0 +1,9 @@
+# Local agent workspaces and temporary visual-prototype state
+.agents/
+.superpowers/
+
+# Deployment backup generated on the local machine
+backups/
+
+# Git metadata must never be staged as project content
+.git/

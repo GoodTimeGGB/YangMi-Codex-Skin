@@ -1,0 +1,125 @@
+{
+  "ok": true,
+  "chroma_key": {
+    "hex": "#00FF00",
+    "rgb": [
+      0,
+      255,
+      0
+    ],
+    "threshold": 96.0
+  },
+  "rows": [
+    {
+      "state": "idle",
+      "frames": [
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\idle\\00.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\idle\\01.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\idle\\02.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\idle\\03.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\idle\\04.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\idle\\05.png"
+      ],
+      "method": "stable-slots"
+    },
+    {
+      "state": "running-right",
+      "frames": [
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running-right\\00.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running-right\\01.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running-right\\02.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running-right\\03.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running-right\\04.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running-right\\05.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running-right\\06.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running-right\\07.png"
+      ],
+      "method": "stable-slots"
+    },
+    {
+      "state": "running-left",
+      "frames": [
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running-left\\00.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running-left\\01.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running-left\\02.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running-left\\03.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running-left\\04.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running-left\\05.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running-left\\06.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running-left\\07.png"
+      ],
+      "method": "stable-slots"
+    },
+    {
+      "state": "waving",
+      "frames": [
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\waving\\00.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\waving\\01.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\waving\\02.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\waving\\03.png"
+      ],
+      "method": "stable-slots"
+    },
+    {
+      "state": "jumping",
+      "frames": [
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\jumping\\00.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\jumping\\01.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\jumping\\02.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\jumping\\03.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\jumping\\04.png"
+      ],
+      "method": "stable-slots"
+    },
+    {
+      "state": "failed",
+      "frames": [
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\failed\\00.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\failed\\01.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\failed\\02.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\failed\\03.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\failed\\04.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\failed\\05.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\failed\\06.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\failed\\07.png"
+      ],
+      "method": "stable-slots"
+    },
+    {
+      "state": "waiting",
+      "frames": [
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\waiting\\00.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\waiting\\01.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\waiting\\02.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\waiting\\03.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\waiting\\04.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\waiting\\05.png"
+      ],
+      "method": "stable-slots"
+    },
+    {
+      "state": "running",
+      "frames": [
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running\\00.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running\\01.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running\\02.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running\\03.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running\\04.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\running\\05.png"
+      ],
+      "method": "stable-slots"
+    },
+    {
+      "state": "review",
+      "frames": [
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\review\\00.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\review\\01.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\review\\02.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\review\\03.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\review\\04.png",
+        "D:\\PersonalProject\\SKINS\\YangMi-Codex-Skin\\pet-runs\\yangmi-green-bee\\frames\\review\\05.png"
+      ],
+      "method": "stable-slots"
+    }
+  ]
+}

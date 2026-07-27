@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "themes": [
+    {
+      "id": "floral-retro",
+      "label": "花漾复古",
+      "accent": "#d3464e",
+      "surface": "#fff4e9",
+      "ink": "#52233a",
+      "hero": "assets/themes/floral-retro/hero.webp",
+      "polaroid": "assets/themes/floral-retro/polaroid.webp",
+      "headline": "花间灵感，自在盛放",
+      "subhead": "花漾复古主题"
+    },
+    {
+      "id": "woodland-white",
+      "label": "白衣林间",
+      "accent": "#879985",
+      "surface": "#fbfcfb",
+      "ink": "#36413a",
+      "hero": "assets/themes/woodland-white/hero.jpg",
+      "polaroid": "assets/themes/woodland-white/polaroid.jpg",
+      "headline": "林间微光，安静创作",
+      "subhead": "白衣林间主题"
+    },
+    {
+      "id": "bridal-moonlight",
+      "label": "婚纱月光",
+      "accent": "#9bbce5",
+      "surface": "#f4f8ff",
+      "ink": "#2b3d64",
+      "hero": "assets/themes/bridal-moonlight/hero.webp",
+      "polaroid": "assets/themes/bridal-moonlight/polaroid.webp",
+      "headline": "月光轻落，灵感闪耀",
+      "subhead": "婚纱月光主题"
+    },
+    {
+      "id": "noir-silver",
+      "label": "雅黑银灰",
+      "accent": "#7b849b",
+      "surface": "#f4f5f8",
+      "ink": "#252b3b",
+      "hero": "assets/themes/noir-silver/hero.webp",
+      "polaroid": "assets/themes/noir-silver/polaroid.webp",
+      "headline": "冷静锋芒，专注向前",
+      "subhead": "雅黑银灰主题"
+    }
+  ]
+}

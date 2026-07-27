@@ -1,0 +1,4 @@
+interface:
+  display_name: "Yang Mi Codex Skins"
+  short_description: "Switch four Yang Mi-inspired Codex skins"
+  default_prompt: "Apply the Bai Qian Codex skin."

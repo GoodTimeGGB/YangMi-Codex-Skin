@@ -19,10 +19,10 @@ header{background:rgba(255,247,249,.94)}
 .community-links strong,.community-links small{display:block}.community-links small{margin-top:4px;font-size:12px;line-height:1.45}
 .community-links .social-card{min-height:116px;padding:17px}
 .link-arrow{margin-left:auto;color:#8d4765;font-size:20px;font-weight:700}
-.wechat-card{display:flex;min-height:auto;flex-direction:column;justify-content:space-between;align-items:stretch;gap:22px;padding:22px!important;background:#fff!important}
+.wechat-card{display:block;min-height:auto;padding:0!important;overflow:hidden;background:#fff!important}
 .wechat-copy{display:flex;min-width:0;align-items:center;gap:13px}.wechat-copy>img{width:38px;height:38px;flex:0 0 auto;object-fit:contain}.wechat-copy>div{min-width:0}
 .social-kicker{margin:0 0 7px;color:#a55170;font-size:11px;font-weight:700;letter-spacing:.08em}
-.qr-wrap{display:flex;justify-content:center;padding-top:18px;border-top:1px solid #f0dce4}.qr-inline{width:min(100%,512px)!important;height:auto!important;flex:0 0 auto;padding:6px;border:1px solid #e4c7d3;background:#fff}
+.qr-wrap{display:flex;justify-content:center;padding-top:18px;border-top:1px solid #f0dce4}.wechat-card>.qr-inline{width:100%!important;height:auto!important;padding:0;border:0;background:transparent}
 footer{max-width:none!important;display:flex!important;justify-content:space-between;align-items:center;padding-left:max(5vw,calc((100vw - 1180px)/2 + 5vw))!important;padding-right:max(5vw,calc((100vw - 1180px)/2 + 5vw))!important;background:#3b2935;color:#fff;border-top:0!important}
 footer span{display:block;margin-top:3px;color:#eedce5;font-size:12px}footer div:last-child{display:flex;gap:18px;font-size:13px;color:#fff0f5}
 @media(max-width:760px){.community{grid-template-columns:1fr;gap:30px}.community-panel{grid-template-columns:1fr}.community-links{grid-template-columns:1fr}.wechat-card{min-height:auto}.qr-wrap{justify-content:center}footer{align-items:flex-start;flex-direction:column;gap:16px;padding-left:24px!important;padding-right:24px!important}footer div:last-child{flex-wrap:wrap}}

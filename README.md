@@ -1,6 +1,6 @@
 # YangMi Codex Skin
 
-杨幂主题 Codex 皮肤与杨幂绿蜂宠物，为第一次接触 AI 的用户准备了 Windows / macOS 分步安装方式。
+杨幂主题 Codex 皮肤与陪伴宠物，为第一次接触 AI 的用户准备了 Windows / macOS 分步安装方式。
 
 ![应用皮肤和宠物后的 Codex 最终效果](site/assets/hero-codex-skin-preview.png)
 

@@ -71,9 +71,17 @@ zsh skin-package/macos/apply-yang-mi-skin.zsh woodland-white --restart-existing
 
 ![宁的AI小站微信公众号二维码](site/assets/wechat-public-account-banner.webp)
 
+### 蜜蜂交流群
+
+扫码加入群聊，交流皮肤、宠物使用体验和主题灵感。
+
+![蜜蜂交流群二维码](site/assets/community-group-qr.png)
+
 ### 赞赏支持
 
-当前未公开个人赞赏码。欢迎通过 GitHub Star、提交问题反馈、分享主题图片或提出改进建议支持项目；如后续公开赞赏码，会在介绍页和本节同步更新。
+项目保持免费开源，赞赏完全自愿。感谢通过 GitHub Star、提交问题反馈、分享主题图片或赞赏支持后续制作。
+
+![GoodTime 赞赏码](site/assets/goodtime-reward-qr.png)
 
 ## 项目说明与免责声明
 

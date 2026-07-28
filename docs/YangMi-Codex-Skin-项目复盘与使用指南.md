@@ -2,6 +2,19 @@
 
 > 从一张背景图开始，到四套主题、一只动画宠物，以及一套普通人也能直接使用的本地皮肤包。
 
+## 最新入口：先下载，再照着安装
+
+如果你是第一次接触 AI，或只想直接使用成品，不必先读完制作过程。按下面的顺序完成即可：
+
+1. 打开介绍页查看皮肤、宠物动效，以及 Windows / macOS 的完整安装说明：<https://yangmi-codex-skin.pages.dev/>
+2. 下载项目压缩包：<https://github.com/GoodTimeGGB/YangMi-Codex-Skin/archive/refs/heads/main.zip>
+3. 解压后，Windows 用户双击 `pet-package/windows/Install-杨幂绿蜂宠物.cmd` 安装宠物，再到 `skin-package/windows/` 双击喜欢的 `Apply-*.cmd` 应用皮肤；macOS 用户按介绍页中的终端命令执行。
+4. 重启 Codex 后，进入 `编辑 → Settings… → 宠物（Pets）`，选择 `Yang Mi Green Bee`。
+
+介绍页还收录了四张主题参考图、宠物向左/向右拖动、悬停跳跃、处理任务等效果预览，并提供主题图片投稿与其他明星皮肤定制入口。
+
+项目开源仓库：<https://github.com/GoodTimeGGB/YangMi-Codex-Skin>
+
 我每天都要在 Codex 里写代码、看报错、整理需求。它足够好用，但打开之后永远是同一种工作界面。
 
 于是我想做一件小事：不改 Codex 的功能，不打断写代码，只把它变成一个更像“我自己的工作空间”的地方。最后，这件事没有停在换壁纸上，而是做成了一套能切换主题、能替换背景、还能带着动画宠物一起使用的皮肤包。
@@ -215,11 +228,11 @@ skin-package/windows/Restore-默认外观.cmd
 2. **继续做宠物。** 换角色、换服装、增加动作，只要保持精灵图规格和状态语义，皮肤不需要重写。
 3. **继续做可分享的成品。** 把主题、宠物和说明文档打包，让别人下载后按两三步就能用起来。
 
-项目地址将在发布后补充：
+项目入口：
 
-- GitHub: [GoodTimeGGB/YangMi-Codex-Skin](https://github.com/GoodTimeGGB/YangMi-Codex-Skin)
-- Gitee: [待补充](https://gitee.com/<your-account>/YangMi-Codex-Skin)
-- GitCode: [待补充](https://gitcode.com/<your-account>/YangMi-Codex-Skin)
+- 介绍页：[yangmi-codex-skin.pages.dev](https://yangmi-codex-skin.pages.dev/)
+- 直接下载：[项目压缩包（ZIP）](https://github.com/GoodTimeGGB/YangMi-Codex-Skin/archive/refs/heads/main.zip)
+- GitHub：[GoodTimeGGB/YangMi-Codex-Skin](https://github.com/GoodTimeGGB/YangMi-Codex-Skin)
 
 ---
 

@@ -59,10 +59,11 @@ zsh skin-package/macos/apply-yang-mi-skin.zsh woodland-white --restart-existing
 
 图片必须是真正的 JPEG 文件；仅将 WebP 或 PNG 改名为 `.jpg` 不会生效。
 
-## 了解更多与参与
+## 社群、反馈与支持
 
 - 介绍页包含主题参考图、完整安装说明和宠物设置引导：[yangmi-codex-skin.pages.dev](https://yangmi-codex-skin.pages.dev/)
 - 项目复盘与使用指南：[YangMi-Codex-Skin-项目复盘与使用指南.md](docs/YangMi-Codex-Skin-项目复盘与使用指南.md)
+- 问题反馈与功能建议：[GitHub Issues](https://github.com/GoodTimeGGB/YangMi-Codex-Skin/issues/new)
 - 小红书：[GoodTime](https://www.xiaohongshu.com/user/profile/5da45e7f0000000001002cc2)
 - 图片投稿或其他明星皮肤定制：[提交表单](https://my.feishu.cn/share/base/form/shrcn0kDoXdfxhI3hcE8OBdmimd)
 
@@ -70,6 +71,15 @@ zsh skin-package/macos/apply-yang-mi-skin.zsh woodland-white --restart-existing
 
 ![宁的AI小站微信公众号二维码](site/assets/wechat-public-account-banner.webp)
 
-## 项目说明
+### 赞赏支持
 
-这是独立的粉丝制作项目，与 OpenAI 或杨幂官方无隶属、授权或背书关系。仓库中的人物肖像与图片素材仅用于项目展示；发布、转载或二次分发前，请自行确认素材授权范围与平台规则。
+当前未公开个人赞赏码。欢迎通过 GitHub Star、提交问题反馈、分享主题图片或提出改进建议支持项目；如后续公开赞赏码，会在介绍页和本节同步更新。
+
+## 项目说明与免责声明
+
+这是独立的粉丝制作项目，与 OpenAI 或杨幂官方无隶属、授权或背书关系。
+
+- 本项目仅供个人学习、研究与交流使用；请勿将未获授权的形象、图片或素材用于商业用途。
+- 使用、转载或二次分发前，请自行确认人物肖像、图片素材、商标及平台规则的授权范围。
+- 本项目不读取或上传用户的项目内容、聊天内容或账号信息；使用本地脚本前请保存正在编辑的工作。
+- 因使用、修改或二次分发本项目产生的风险，应由实际使用者自行判断与承担。

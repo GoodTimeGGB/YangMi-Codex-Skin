@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>杨幂 Codex Skin - 微信公众号排版预览</title>
+    <style>
+      :root {
+        --green: #2f9b71;
+        --deep-green: #157052;
+        --pale-green: #eef8f2;
+        --line: #d6eadf;
+        --ink: #303633;
+        --muted: #758078;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: #edf5f0;
+        color: var(--ink);
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 24px;
+        background: rgba(255,255,255,.96);
+        border-bottom: 1px solid var(--line);
+      }
+      .toolbar strong { color: var(--deep-green); font-size: 15px; }
+      .toolbar span { color: var(--muted); font-size: 13px; }
+      button {
+        border: 0;
+        border-radius: 5px;
+        padding: 10px 16px;
+        background: var(--green);
+        color: #fff;
+        font: inherit;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      button:hover { background: var(--deep-green); }
+      .canvas { padding: 32px 16px 64px; }
+      #article {
+        width: min(100%, 760px);
+        margin: 0 auto;
+        padding: 46px 34px 54px;
+        background: #fff;
+        box-shadow: 0 12px 38px rgba(32, 80, 57, .1);
+      }
+      .article-kicker {
+        display: inline-block;
+        margin: 0 0 14px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: var(--pale-green);
+        color: var(--deep-green);
+        font-size: 12px;
+        font-weight: 600;
+      }
+      #article h1 { margin: 0 0 20px; color: #185b42; font-size: 28px; line-height: 1.42; letter-spacing: 0; }
+      #article h2 {
+        margin: 42px 0 20px;
+        padding: 8px 0 8px 12px;
+        border-left: 4px solid var(--green);
+        color: #1e6e50;
+        font-size: 21px;
+        line-height: 1.45;
+      }
+      #article h3 { margin: 28px 0 13px; color: #2c7457; font-size: 17px; line-height: 1.55; }
+      #article .hero-visual { margin: 0 0 28px; border: 1px solid #1e6e50; background: #f7fcf8; box-shadow: 9px 9px 0 #cfe9d9; }
+      #article .hero-visual img { width: 100%; margin: 0; border-radius: 0; }
+      #article .hero-visual figcaption { padding: 10px 13px; color: #336a52; font-size: 13px; text-align: center; }
+      #article p { margin: 0 0 18px; color: var(--ink); font-size: 16px; line-height: 1.9; text-align: justify; }
+      #article blockquote {
+        margin: 22px 0;
+        padding: 15px 18px;
+        border: 0;
+        border-left: 3px solid #78bd9d;
+        background: var(--pale-green);
+        color: #4c6659;
+      }
+      #article blockquote p { margin: 0; color: #4c6659; }
+      #article hr { border: 0; border-top: 1px solid var(--line); margin: 36px 0; }
+      #article ul, #article ol { margin: 0 0 20px; padding-left: 26px; }
+      #article li { margin: 9px 0; color: var(--ink); font-size: 16px; line-height: 1.82; }
+      #article li::marker { color: var(--green); font-weight: 700; }
+      #article a { color: #1b8059; text-decoration: none; border-bottom: 1px solid #b8dfca; }
+      #article strong { color: #1e6e50; }
+      #article code { padding: 2px 5px; border-radius: 3px; background: #f1f7f3; color: #176b4d; font-family: Consolas, monospace; font-size: 13px; }
+      #article pre { margin: 16px 0 22px; padding: 14px 16px; overflow: auto; border-radius: 4px; background: #173d30; }
+      #article pre code { padding: 0; background: transparent; color: #d9f0e2; line-height: 1.7; }
+      #article img { display: block; max-width: 100%; height: auto; margin: 18px auto 24px; border-radius: 3px; }
+      #article table { width: 100%; margin: 20px 0 26px; border-collapse: separate; border-spacing: 8px 0; }
+      #article th { padding: 9px 8px; background: var(--pale-green); color: var(--deep-green); font-size: 14px; font-weight: 600; text-align: center; }
+      #article td { padding: 0; vertical-align: top; }
+      #article td img { width: 100%; margin: 0; }
+      #article .theme-gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 20px 0 28px; }
+      #article .theme-gallery figure { margin: 0; border: 1px solid var(--line); background: #fff; }
+      #article .theme-gallery img { width: 100%; aspect-ratio: 3 / 4; margin: 0; border-radius: 0; object-fit: cover; object-position: center top; }
+      #article .theme-gallery figcaption { padding: 8px 4px; color: var(--deep-green); background: var(--pale-green); font-size: 12px; font-weight: 600; text-align: center; }
+      #article .wechat-note { margin: 24px 0; padding: 14px 16px; border: 1px solid var(--line); background: #fbfefc; color: #577264; font-size: 14px; line-height: 1.7; }
+      #article .load-source { margin: 24px 0; padding: 20px; border: 1px dashed #9dcbb3; background: var(--pale-green); text-align: center; }
+      #article .load-source p { margin-bottom: 12px; text-align: center; color: #577264; }
+      .status { min-height: 18px; color: var(--deep-green); font-size: 13px; }
+      @media (max-width: 640px) {
+        .toolbar { padding: 12px 14px; }
+        .toolbar span { display: none; }
+        .canvas { padding: 16px 0 40px; }
+        #article { padding: 34px 22px 42px; box-shadow: none; }
+        #article h1 { font-size: 25px; }
+        #article h2 { font-size: 19px; }
+        #article p, #article li { font-size: 15px; }
+        #article table { border-spacing: 4px 0; }
+        #article .theme-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="toolbar">
+      <div>
+        <strong>绿意盎然 · 公众号排版预览</strong>
+        <span>复制后直接粘贴到微信公众号编辑器</span>
+      </div>
+      <div>
+        <span id="status" class="status"></span>
+        <button id="copy-button" type="button">复制正文</button>
+      </div>
+    </header>
+    <main class="canvas">
+      <article id="article" aria-live="polite">
+        <div class="article-kicker">杨幂 Codex Skin · 项目复盘</div>
+        <p>正在生成排版预览…</p>
+      </article>
+    </main>
+    <script>
+      const article = document.getElementById('article');
+      const status = document.getElementById('status');
+      const escapeHtml = (value) => value.replace(/[&<>"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[char]);
+      const inline = (value) => escapeHtml(value)
+        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+        .replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '<a href="$2">$1</a>');
+      const image = (line) => {
+        const match = line.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+        return match ? `<img src="${match[2]}" alt="${match[1]}">` : null;
+      };
+      function renderMarkdown(markdown) {
+        const lines = markdown.replace(/\r/g, '').split('\n');
+        const out = [
+          '<div class="article-kicker">杨幂 Codex Skin · 项目复盘</div>',
+          '<figure class="hero-visual"><img src="https://cos.wangjn.site/img/20260728115316525.png?imageSlim" alt="应用皮肤和宠物后的 Codex 最终效果"><figcaption>杨幂 Codex Skin：主题、背景与会动的绿蜂宠物</figcaption></figure>'
+        ];
+        let index = 0;
+        while (index < lines.length) {
+          const line = lines[index];
+          if (!line.trim()) { index++; continue; }
+          if (line.startsWith('```')) {
+            const code = []; index++;
+            while (index < lines.length && !lines[index].startsWith('```')) code.push(lines[index++]);
+            out.push(`<pre><code>${escapeHtml(code.join('\n'))}</code></pre>`); index++; continue;
+          }
+          if (line === '---') { out.push('<hr>'); index++; continue; }
+          if (line.startsWith('# ')) { out.push(`<h1>${inline(line.slice(2))}</h1>`); index++; continue; }
+          if (line.startsWith('## ')) { out.push(`<h2>${inline(line.slice(3))}</h2>`); index++; continue; }
+          if (line.startsWith('### ')) { out.push(`<h3>${inline(line.slice(4))}</h3>`); index++; continue; }
+          if (line.startsWith('> ')) { out.push(`<blockquote><p>${inline(line.slice(2))}</p></blockquote>`); index++; continue; }
+          const standaloneImage = image(line);
+          if (standaloneImage) { out.push(standaloneImage); index++; continue; }
+          if (line.startsWith('|') && index + 1 < lines.length && lines[index + 1].match(/^\|\s*-+/)) {
+            const headerCells = line.split('|').slice(1, -1).map((cell) => cell.trim());
+            const headers = headerCells.map((cell) => `<th>${inline(cell)}</th>`).join('');
+            index += 2;
+            const rows = [];
+            const rawRows = [];
+            while (index < lines.length && lines[index].startsWith('|')) {
+              const rawCells = lines[index].split('|').slice(1, -1).map((cell) => cell.trim());
+              rawRows.push(rawCells);
+              const cells = rawCells.map((content) => {
+                return `<td>${image(content) || inline(content)}</td>`;
+              }).join('');
+              rows.push(`<tr>${cells}</tr>`); index++;
+            }
+            const isThemeGallery = headerCells.length === 4 && headerCells.every((cell) => cell.startsWith('主题参考图')) && rawRows.length === 1;
+            if (isThemeGallery) {
+              const cards = rawRows[0].map((content, cardIndex) => `<figure>${image(content) || ''}<figcaption>${inline(headerCells[cardIndex])}</figcaption></figure>`).join('');
+              out.push(`<div class="theme-gallery">${cards}</div>`);
+            } else {
+              out.push(`<table><thead><tr>${headers}</tr></thead><tbody>${rows.join('')}</tbody></table>`);
+            }
+            continue;
+          }
+          const list = line.match(/^(\d+)\.\s+(.+)$/);
+          if (list || line.match(/^[-*]\s+/)) {
+            const ordered = Boolean(list); const items = [];
+            while (index < lines.length) {
+              const match = ordered ? lines[index].match(/^\d+\.\s+(.+)$/) : lines[index].match(/^[-*]\s+(.+)$/);
+              if (!match) break;
+              items.push(`<li>${inline(match[1])}</li>`); index++;
+            }
+            out.push(`<${ordered ? 'ol' : 'ul'}>${items.join('')}</${ordered ? 'ol' : 'ul'}>`); continue;
+          }
+          out.push(`<p>${inline(line)}</p>`); index++;
+        }
+        out.push('<div class="wechat-note">本文图片使用公开图床链接。粘贴到公众号编辑器后，请在发布前检查图片是否已被平台正常抓取。</div>');
+        return out.join('');
+      }
+      async function loadArticle() {
+        try {
+          const response = await fetch('./YangMi-Codex-Skin-项目复盘与使用指南.md');
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          article.innerHTML = renderMarkdown(await response.text());
+        } catch (error) {
+          article.innerHTML = '<div class="article-kicker">杨幂 Codex Skin · 项目复盘</div><h1>选择复盘 Markdown 文件</h1><div class="load-source"><p>直接双击本页面时，浏览器会限制读取同目录文件。选择一次下面的 Markdown 文件即可生成排版预览。</p><input id="markdown-file" type="file" accept=".md,text/markdown"></div>';
+          document.getElementById('markdown-file').addEventListener('change', async (event) => {
+            const file = event.target.files[0];
+            if (!file) return;
+            article.innerHTML = renderMarkdown(await file.text());
+            status.textContent = '排版预览已生成';
+          });
+          status.textContent = '请选择复盘 Markdown 文件';
+        }
+      }
+      function inlineStyles(source, target) {
+        const sourceNodes = [source, ...source.querySelectorAll('*')];
+        const targetNodes = [target, ...target.querySelectorAll('*')];
+        sourceNodes.forEach((node, index) => {
+          const style = getComputedStyle(node);
+          targetNodes[index].style.cssText = [
+            'display', 'width', 'maxWidth', 'height', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
+            'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft', 'border', 'borderTop', 'borderLeft',
+            'backgroundColor', 'color', 'fontFamily', 'fontSize', 'fontWeight', 'fontStyle', 'lineHeight',
+            'letterSpacing', 'textAlign', 'textDecoration', 'borderRadius', 'verticalAlign', 'borderCollapse', 'borderSpacing'
+          ].map((key) => `${key.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)}:${style[key]}`).join(';');
+        });
+      }
+      function stackTableForWechat(table) {
+        const headers = [...table.querySelectorAll('thead th')].map((header) => header.textContent.trim());
+        const stack = document.createElement('div');
+        [...table.querySelectorAll('tbody td')].forEach((cell, index) => {
+          const figure = document.createElement('figure');
+          const caption = document.createElement('figcaption');
+          caption.textContent = headers[index % headers.length] || '';
+          figure.append(caption, ...[...cell.childNodes].map((node) => node.cloneNode(true)));
+          stack.append(figure);
+        });
+        table.replaceWith(stack);
+      }
+      function makeWechatSafe(clone) {
+        clone.querySelector('.wechat-note')?.remove();
+        clone.querySelectorAll('table').forEach(stackTableForWechat);
+        clone.querySelectorAll('.theme-gallery img').forEach((image) => { image.dataset.wechatTheme = 'true'; });
+        clone.querySelectorAll('*').forEach((element) => {
+          element.removeAttribute('class');
+          element.removeAttribute('style');
+        });
+        clone.style.cssText = 'width:100%;margin:0;padding:0;background:#ffffff;color:#303633;font-family:Microsoft YaHei,PingFang SC,sans-serif;';
+        clone.querySelectorAll('h1').forEach((heading) => { heading.style.cssText = 'margin:0 0 20px;color:#185b42;font-size:26px;font-weight:700;line-height:1.45;'; });
+        clone.querySelectorAll('h2').forEach((heading) => { heading.style.cssText = 'margin:36px 0 18px;padding:7px 0 7px 10px;border-left:4px solid #2f9b71;color:#1e6e50;font-size:20px;font-weight:700;line-height:1.5;'; });
+        clone.querySelectorAll('h3').forEach((heading) => { heading.style.cssText = 'margin:25px 0 12px;color:#2c7457;font-size:17px;font-weight:700;line-height:1.6;'; });
+        clone.querySelectorAll('p').forEach((paragraph) => { paragraph.style.cssText = 'margin:0 0 16px;color:#303633;font-size:16px;line-height:1.85;text-align:left;'; });
+        clone.querySelectorAll('blockquote').forEach((quote) => { quote.style.cssText = 'margin:18px 0;padding:14px 15px;border-left:3px solid #78bd9d;background:#eef8f2;color:#4c6659;'; });
+        clone.querySelectorAll('figure').forEach((figure) => { figure.style.cssText = 'display:block;margin:18px 0 24px;padding:0;border:0;'; });
+        clone.querySelectorAll('figcaption').forEach((caption) => { caption.style.cssText = 'display:block;margin:0 0 7px;padding:7px 8px;background:#eef8f2;color:#157052;font-size:13px;font-weight:700;line-height:1.4;text-align:center;'; });
+        clone.querySelectorAll('img').forEach((image) => {
+          image.style.maxWidth = '100%';
+          image.style.width = '100%';
+          image.style.height = 'auto';
+          image.style.display = 'block';
+          image.style.margin = '0';
+          image.style.border = '0';
+          if (/\.gif(?:\?|$)/i.test(image.src)) {
+            image.style.width = '180px';
+            image.style.maxWidth = '60%';
+            image.style.margin = '0 auto';
+          }
+          if (image.dataset.wechatTheme === 'true') {
+            image.style.width = '230px';
+            image.style.maxWidth = '72%';
+            image.style.margin = '0 auto';
+          }
+        });
+        clone.querySelectorAll('figure').forEach((figure) => {
+          if (figure.querySelector('img[data-wechat-theme="true"]')) {
+            figure.style.width = '230px';
+            figure.style.maxWidth = '72%';
+            figure.style.margin = '18px auto 24px';
+          }
+        });
+        clone.querySelectorAll('ol, ul').forEach((list) => {
+          list.style.display = 'block';
+          list.style.margin = '0 0 18px 0';
+          list.style.paddingLeft = '26px';
+        });
+        clone.querySelectorAll('li').forEach((item) => {
+          item.style.display = 'list-item';
+          item.style.margin = '8px 0';
+          item.style.padding = '0';
+          item.style.lineHeight = '1.82';
+        });
+        clone.querySelectorAll('code').forEach((code) => { code.style.cssText = 'padding:2px 4px;background:#f1f7f3;color:#176b4d;font-family:Consolas,monospace;font-size:13px;word-break:break-all;'; });
+        clone.querySelectorAll('pre').forEach((block) => {
+          block.style.display = 'block';
+          block.style.margin = '16px 0 22px';
+          block.style.padding = '13px 14px';
+          block.style.background = '#173d30';
+          block.style.color = '#d9f0e2';
+          block.style.whiteSpace = 'pre-wrap';
+          block.style.wordBreak = 'break-word';
+          block.style.overflow = 'hidden';
+        });
+      }
+      document.getElementById('copy-button').addEventListener('click', async () => {
+        const clone = article.cloneNode(true);
+        clone.removeAttribute('id'); inlineStyles(article, clone); makeWechatSafe(clone);
+        const holder = document.createElement('div');
+        holder.contentEditable = 'true'; holder.style.cssText = 'position:fixed;left:-9999px;top:0;width:760px;background:#fff;';
+        holder.append(clone); document.body.append(holder);
+        const range = document.createRange(); range.selectNodeContents(holder);
+        const selection = window.getSelection(); selection.removeAllRanges(); selection.addRange(range);
+        try {
+          document.execCommand('copy');
+          status.textContent = '已复制，直接粘贴到公众号编辑器';
+        } finally {
+          selection.removeAllRanges(); holder.remove();
+        }
+      });
+      loadArticle();
+    </script>
+  </body>
+</html>

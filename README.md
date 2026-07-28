@@ -2,7 +2,7 @@
 
 杨幂主题 Codex 皮肤与陪伴宠物，为第一次接触 AI 的用户准备了 Windows / macOS 分步安装方式。
 
-![应用皮肤和宠物后的 Codex 最终效果](site/assets/hero-codex-skin-preview.png)
+![应用皮肤和宠物后的 Codex 最终效果](site/assets/hero-codex-skin-preview.webp)
 
 ## 先从这里开始
 
@@ -77,8 +77,8 @@ zsh skin-package/macos/apply-yang-mi-skin.zsh woodland-white --restart-existing
 
 <table>
   <tr>
-    <td align="center" width="50%"><strong>蜜蜂交流群</strong><br />微信扫码加入群聊交流<br /><br /><img src="site/assets/community-group-qr.png" alt="蜜蜂交流群二维码" width="180" /></td>
-    <td align="center" width="50%"><strong>GoodTime 赞赏码</strong><br />自愿赞赏，支持后续更新<br /><br /><img src="site/assets/goodtime-reward-qr.png" alt="GoodTime 赞赏码" width="180" /></td>
+    <td align="center" width="50%"><strong>蜜蜂交流群</strong><br />微信扫码加入群聊交流<br /><br /><img src="site/assets/community-group-qr.webp" alt="蜜蜂交流群二维码" width="180" /></td>
+    <td align="center" width="50%"><strong>GoodTime 赞赏码</strong><br />自愿赞赏，支持后续更新<br /><br /><img src="site/assets/goodtime-reward-qr.webp" alt="GoodTime 赞赏码" width="180" /></td>
   </tr>
 </table>
 

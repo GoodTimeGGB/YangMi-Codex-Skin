@@ -1,29 +1,23 @@
-# 我给 Codex 做了一套杨幂风格皮肤，还养了一只会动的小蜜蜂
+# 把 Codex 变成杨幂主题工作台：四套皮肤和一只会动的宠物
 
-> 从一张背景图开始，到四套主题、一只动画宠物，以及一套普通人也能直接使用的本地皮肤包。
+> 从一张背景图开始，最后做成四套可切换主题、一只会动的绿蜂宠物，以及一套能直接安装的本地皮肤包。
 
-## 最新入口：先下载，再照着安装
+**只想直接使用，可以先从这里开始：**
 
-如果你是第一次接触 AI，或只想直接使用成品，不必先读完制作过程。按下面的顺序完成即可：
+1. 打开 [介绍页](https://yangmi-codex-skin.pages.dev/) 看效果、下载入口和 Windows / macOS 的安装步骤。
+2. 下载 [项目压缩包](https://github.com/GoodTimeGGB/YangMi-Codex-Skin/archive/refs/heads/main.zip) 并解压。
+3. Windows 先双击 `pet-package/windows/Install-杨幂绿蜂宠物.cmd`，再在 `skin-package/windows/` 双击喜欢的 `Apply-*.cmd`；macOS 按介绍页中的终端命令执行。
+4. 重启 Codex，在 `编辑 → Settings… → 宠物（Pets）` 里选择 `Yang Mi Green Bee`。
 
-1. 打开介绍页查看皮肤、宠物动效，以及 Windows / macOS 的完整安装说明：<https://yangmi-codex-skin.pages.dev/>
-2. 下载项目压缩包：<https://github.com/GoodTimeGGB/YangMi-Codex-Skin/archive/refs/heads/main.zip>
-3. 解压后，Windows 用户双击 `pet-package/windows/Install-杨幂绿蜂宠物.cmd` 安装宠物，再到 `skin-package/windows/` 双击喜欢的 `Apply-*.cmd` 应用皮肤；macOS 用户按介绍页中的终端命令执行。
-4. 重启 Codex 后，进入 `编辑 → Settings… → 宠物（Pets）`，选择 `Yang Mi Green Bee`。
+项目仓库：[GoodTimeGGB/YangMi-Codex-Skin](https://github.com/GoodTimeGGB/YangMi-Codex-Skin)。下面这篇复盘，写的是它从“换一张背景图”的念头，怎么慢慢长成一个可分享成品的过程。
 
-介绍页还收录了四张主题参考图、宠物向左/向右拖动、悬停跳跃、处理任务等效果预览，并提供主题图片投稿与其他明星皮肤定制入口。
+我每天都在 Codex 里写代码、看报错、整理需求。它足够好用，可一打开永远是同一种工作界面。于是我想把它收拾成一个更有自己气息的工作台：不碰原有功能，不妨碍写代码，只让每天面对的窗口舒服一点。
 
-项目开源仓库：<https://github.com/GoodTimeGGB/YangMi-Codex-Skin>
-
-我每天都要在 Codex 里写代码、看报错、整理需求。它足够好用，但打开之后永远是同一种工作界面。
-
-于是我想做一件小事：不改 Codex 的功能，不打断写代码，只把它变成一个更像“我自己的工作空间”的地方。最后，这件事没有停在换壁纸上，而是做成了一套能切换主题、能替换背景、还能带着动画宠物一起使用的皮肤包。
-
-这篇文章不讲高深原理，主要记录我是怎么一步步把它做出来的，以及中间踩过哪些很真实的坑。读到最后，你可以直接照着把它用到自己的 Codex 上。
+事情后来没有停在换壁纸。四套主题、可替换的背景图、一只会跟着状态动起来的宠物，都在这次尝试里慢慢补齐。下面把制作过程和那些绕不过去的坑记下来，也给想直接上手的人留一份不拐弯的说明。
 
 ---
 
-## 一、先说说我想做成什么样
+## 一、先把边界想清楚
 
 一开始我给自己定了三个要求：
 
@@ -31,31 +25,27 @@
 2. **能换。** 不想把图片写死在代码里，之后换一张自己的图就应该能生效。
 3. **能收回。** 不去改 `WindowsApps` 或 `app.asar`，不喜欢时可以恢复默认外观。
 
-所以最后的方案没有去碰应用安装包，而是在当前 Codex 会话中加了一层不可交互的背景。它只监听本机回环地址的调试端口，不会替换原生按钮，也不会盖住编辑器。
+所以最后没有去碰应用安装包，而是在当前 Codex 会话里加了一层不可交互的背景。它只监听本机回环地址的调试端口，不会替换原生按钮，也不会盖住编辑器。
 
-皮肤一共做了四套主题。下面不是效果图占位，而是项目中实际使用的主题背景：
+皮肤目前收录四张主题参考图。为了不把临时风格词误当成图片出处，暂以编号标注；欢迎补充每张图片的正式出处或授权说明后再更新。
 
-| 花漾复古 | 白衣林间 |
-| --- | --- |
-| ![花漾复古主题背景](assets/yangmi-codex-skin-article/theme-floral-retro.webp) | ![白衣林间主题背景](assets/yangmi-codex-skin-article/theme-woodland-white.jpg) |
-
-| 婚纱月光 | 雅黑银灰 |
-| --- | --- |
-| ![婚纱月光主题背景](assets/yangmi-codex-skin-article/theme-bridal-moonlight.webp) | ![雅黑银灰主题背景](assets/yangmi-codex-skin-article/theme-noir-silver.webp) |
+| 主题参考图 01 | 主题参考图 02 | 主题参考图 03 | 主题参考图 04 |
+| --- | --- | --- | --- |
+| ![主题参考图 01](https://cos.wangjn.site/img/20260728111354600.webp?imageSlim) | ![主题参考图 02](https://cos.wangjn.site/img/20260728111354601.jpg?imageSlim) | ![主题参考图 03](https://cos.wangjn.site/img/20260728111624391.webp?imageSlim) | ![主题参考图 04](https://cos.wangjn.site/img/20260728111625749.webp?imageSlim) |
 
 我没有把四套主题做成四个完全不同的界面，而是让它们共享同一套工作区结构，只替换颜色和背景。这样切换时不会重新学习界面，项目维护起来也简单很多。
 
 ---
 
-## 二、核心流程：从一张图到一套可切换皮肤
+## 二、从一张图到一套可切换皮肤
 
-真正做起来，流程没有想象中复杂，可以拆成四步。
+真正动手后，事情可以拆成四步，但每一步都比“换张图”多一点。
 
 ### 步骤 1：先把主题资源放好
 
 每个主题都有自己的背景图和配色，统一放在 `skin-package/assets/themes`。主题名称、颜色和资源路径放在 `skin-package/themes.json`，启动器只认这里定义的四个主题：花漾复古、白衣林间、婚纱月光、雅黑银灰。
 
-这样做的好处是，图片替换、颜色调整和主题切换都有明确入口，不需要去修改一大段注入代码。
+图片替换、颜色调整和主题切换因此都有明确入口，不用每次都钻进一大段注入代码里找位置。
 
 ### 步骤 2：给用户留一个“直接换图”的位置
 
@@ -67,7 +57,7 @@ skin-package/assets/custom-background/
 
 只要里面存在 `background.jpg`，它就会优先覆盖主题自带的背景。用户不必理解主题配置，也不必改 JavaScript，只要准备好一张图片即可。
 
-![自定义背景图目录，background.jpg 为实际应用文件](assets/yangmi-codex-skin-article/custom-background-folder.png)
+![自定义背景图目录，background.jpg 为实际应用文件](https://cos.wangjn.site/img/20260728111626915.png?imageSlim)
 
 这里有一个必须强调的小细节：`background.jpg` 必须是**真实 JPEG 文件**。WebP 或 PNG 只改后缀为 `.jpg` 不行，程序会校验图片结构并拒绝加载。这个坑我自己就踩过，后面会专门讲。
 
@@ -79,11 +69,11 @@ skin-package/assets/custom-background/
 
 最终的宠物联系表如下。每个小格都是程序会用到的真实动画帧：
 
-![杨幂绿色小蜜蜂宠物完整联系表](assets/yangmi-codex-skin-article/pet-contact-sheet.png)
+![杨幂绿色小蜜蜂宠物完整联系表](https://cos.wangjn.site/img/20260728111627594.png?imageSlim)
 
 实际播放时，它不是一张大图，而是根据状态从精灵图中取出对应的小格。下面是等待状态的预览：
 
-![宠物等待状态动画](assets/yangmi-codex-skin-article/pet-waiting.gif)
+![宠物等待状态动画](https://cos.wangjn.site/img/20260728111628858.gif?imageSlim)
 
 ### 步骤 4：把“皮肤”和“宠物”分开安装
 
@@ -100,11 +90,11 @@ skin-package/assets/custom-background/
 
 皮肤和宠物分别装好之后，打开 Codex 的第一眼是这样的：工作区仍然是熟悉的布局，背景只负责烘托氛围；宠物则作为独立的悬浮小窗口待在界面上，不会把输入框和编辑区盖住。
 
-![最终工作区效果：皮肤已应用到 Codex 工作区](assets/yangmi-codex-skin-article/final-codex-workspace.png)
+![最终工作区效果：应用皮肤和宠物后的 Codex 主视觉](https://cos.wangjn.site/img/20260728115316525.png?imageSlim)
 
 下面这张图单独截的是宠物悬浮窗口。截图工具会把透明区域显示成黑色，实际使用时这里是透明的；右下角的“正在思考”就是它在任务执行中的状态提示。
 
-![宠物独立悬浮窗口与思考状态](assets/yangmi-codex-skin-article/pet-overlay.png)
+![宠物独立悬浮窗口与思考状态](https://cos.wangjn.site/img/20260728111631892.png?imageSlim)
 
 ### 1. 拖动宠物时，方向不是乱的
 
@@ -112,7 +102,7 @@ skin-package/assets/custom-background/
 
 | 向左拖动 | 向右拖动 |
 | --- | --- |
-| ![宠物向左拖动时的左向奔跑动画](assets/yangmi-codex-skin-article/pet-drag-left.gif) | ![宠物向右拖动时的右向奔跑动画](assets/yangmi-codex-skin-article/pet-drag-right.gif) |
+| ![宠物向左拖动时的左向奔跑动画](https://cos.wangjn.site/img/20260728111632863.gif?imageSlim) | ![宠物向右拖动时的右向奔跑动画](https://cos.wangjn.site/img/20260728111633488.gif?imageSlim) |
 
 ### 2. 停在宠物上面，它会给一点回应
 
@@ -120,7 +110,7 @@ skin-package/assets/custom-background/
 
 | 悬停跳跃 | 悬停挥手 |
 | --- | --- |
-| ![宠物悬停时的跳跃互动动画](assets/yangmi-codex-skin-article/pet-hover-jump.gif) | ![宠物悬停时的挥手互动动画](assets/yangmi-codex-skin-article/pet-hover-wave.gif) |
+| ![宠物悬停时的跳跃互动动画](https://cos.wangjn.site/img/20260728111634492.gif?imageSlim) | ![宠物悬停时的挥手互动动画](https://cos.wangjn.site/img/20260728111635390.gif?imageSlim) |
 
 ### 3. 输入和执行任务时，它也有自己的节奏
 
@@ -128,21 +118,21 @@ skin-package/assets/custom-background/
 
 | 执行任务中 | 等待用户输入 |
 | --- | --- |
-| ![宠物执行任务时的处理动画](assets/yangmi-codex-skin-article/pet-processing.gif) | ![宠物等待用户输入时的等待动画](assets/yangmi-codex-skin-article/pet-waiting.gif) |
+| ![宠物执行任务时的处理动画](https://cos.wangjn.site/img/20260728111636375.gif?imageSlim) | ![宠物等待用户输入时的等待动画](https://cos.wangjn.site/img/20260728111628858.gif?imageSlim) |
 
-这部分看起来是小细节，但正是它让宠物从一张“摆在右下角的图”，变成了能跟随工作节奏的陪伴角色。
+这些小细节合在一起，才让它不只是右下角的一张图，而是会跟着工作节奏动起来的陪伴角色。
 
 ---
 
 ## 四、最花时间的不是制作，而是解决“看起来很奇怪”的问题
 
-做完第一版时，界面已经能跑起来，但真正的难题才刚开始。下面几个问题，如果不记录下来，后来的人很容易再踩一遍。
+第一版跑起来那天，我以为差不多收工了。结果真正费时间的部分，才刚刚开始。下面几个问题不记下来，之后很容易再踩一遍。
 
 ### 1. 宠物旁边为什么跟着一条缩小的背景图？
 
 最开始我以为是宠物精灵图裁切错了。截图里看上去，宠物右边跟着一条缩小的长图，很像一张没有处理干净的素材。
 
-![修复前：宠物悬浮窗中出现缩小的背景图](assets/yangmi-codex-skin-article/overlay-before-fix.png)
+![修复前：宠物悬浮窗中出现缩小的背景图](https://cos.wangjn.site/img/20260728111638070.png?imageSlim)
 
 后来直接检查页面结构才发现，问题不在宠物。Codex 的宠物运行在一个独立的 `avatar-overlay` 悬浮窗口里，而皮肤注入器当时把背景层同时注入了主工作区和这个悬浮窗口。于是原本完整的背景，在小窗口里又被缩放了一遍。
 
@@ -156,7 +146,7 @@ skin-package/assets/custom-background/
 
 原因是同时运行了两个注入器：一个来自当前项目目录，另一个来自旧副本。它们轮流把自己的 CSS 写回页面，谁都没有真正赢。
 
-最后的处理没有直接“按进程名全杀”，而是先核对路径、主题、端口和浏览器 ID，确认属于旧皮肤包后再停止。这样做麻烦一点，却避免误结束其他工作进程。
+最后没有按进程名“一刀切”，而是先核对路径、主题、端口和浏览器 ID，确认属于旧皮肤包后再停止。步骤多一点，换来的是不会误伤别的工作进程。
 
 ### 3. 为什么双击 Apply 后，背景还是没变？
 
@@ -172,13 +162,13 @@ Invalid JPEG structure
 
 启动器会记录监控器和注入器的身份信息。如果它发现当前进程的路径或参数和记录不一致，就会提示 `watcher identity mismatch`，而不是贸然结束进程。
 
-刚开始这很像“麻烦制造者”，后来我反而觉得它是必要保护。换皮肤不应该以牺牲正在进行的工作为代价。身份对不上，就先停下来确认，而不是猜。
+刚开始我觉得这像“麻烦制造者”，后来才意识到它是必要的保护。换皮肤不该拿正在进行的工作冒险，身份对不上，就先停下来确认。
 
 ---
 
-## 五、普通用户怎么直接用？
+## 五、只想直接用？按这个步骤装
 
-如果你只想使用成品，不关心上面的制作过程，照下面做就够了。
+上面是制作过程；如果只想把成品装进 Codex，照下面做就行。
 
 ### 1. 选择主题
 
@@ -220,9 +210,9 @@ skin-package/windows/Restore-默认外观.cmd
 
 ---
 
-## 六、这套方案接下来还能怎么玩
+## 六、还会继续做下去
 
-做到这里，这个项目已经不仅是一张杨幂背景图了。它可以继续往三个方向发展：
+这不是一张杨幂背景图的终点，后面还想沿着三个方向继续补：
 
 1. **继续做主题。** 把自己的旅行照、游戏截图、摄影作品做成主题资源，保持同一套启动器和目录结构。
 2. **继续做宠物。** 换角色、换服装、增加动作，只要保持精灵图规格和状态语义，皮肤不需要重写。
@@ -238,6 +228,6 @@ skin-package/windows/Restore-默认外观.cmd
 
 ## 写在最后
 
-这次制作最开始只是想让 Codex 好看一点，最后留下来的却是一套更完整的经验：界面可以有个性，但不能影响工作；功能可以做得漂亮，但必须能恢复；遇到奇怪问题时，先看真实页面和真实进程，不要急着猜。
+这次最初只是想让 Codex 好看一点。最后留下来的，是一套我自己也愿意反复用下去的方案：界面可以有个性，但别影响工作；效果可以好看，但要能随时恢复；遇到怪问题，先看真实页面和真实进程，别急着靠猜。
 
-如果你也每天把大量时间交给代码工具，希望它除了“能用”以外还能有一点自己的样子，也许可以从一张真实 JPEG 背景图开始。
+如果你也每天和代码工具打交道，想让它在“能用”之外多一点自己的样子，这个项目已经把第一步准备好了。
